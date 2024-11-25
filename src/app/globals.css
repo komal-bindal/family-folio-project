@@ -17,11 +17,43 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  height: 100%;
+  width: 100%;
+}
+
+.border {
+  width: 100%;
+  height: 390px;
+  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 50px repeat-x,
+    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 50px);
+  /* url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom/auto 50px repeat-x; */
+}
+
+.clip-border-bottom {
+  width: 100%;
+  height: 180px;
+  -webkit-mask: linear-gradient(#ecded1, #ecded1) no-repeat center/100%
+      calc(100% - 50px),
+    url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom / auto 50px repeat-x;
+}
+
+.clip-border {
+  width: 100%;
+  height: 50px;
+  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 30px repeat-x,
+    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 40px);
+  /* url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom/auto 50px repeat-x; */
+}
+.clip-bg-border {
+  width: 100%;
+  height: 100%;
+  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 30px repeat-x,
+    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 60px),
+    url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom / auto 30px repeat-x,
+    url("https://i.ibb.co/5WvbqgG/zmylJ.png") left / auto 5px repeat-y;
+}
+
+.logo-text {
+  font-family: "Ephesis", cursive;
+  font-style: normal;
 }
