@@ -3,57 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --mask-top: url("https://i.ibb.co/7RW8C9t/top.png");
+  --mask-bottom: url("https://i.ibb.co/5WvbqgG/zmylJ.png");
+  --light-background: #ecded1;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   height: 100%;
   width: 100%;
 }
 
-.border {
+.clip-img-top-border {
   width: 100%;
   height: 390px;
-  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 50px repeat-x,
-    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 50px);
-  /* url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom/auto 50px repeat-x; */
+  -webkit-mask: var(--mask-top) top / auto 50px repeat-x,
+    linear-gradient(var(--light-background), var(--light-background)) no-repeat
+      center/100% calc(100% - 50px);
 }
 
-.clip-border-bottom {
-  width: 100%;
-  height: 180px;
-  -webkit-mask: linear-gradient(#ecded1, #ecded1) no-repeat center/100%
-      calc(100% - 50px),
-    url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom / auto 50px repeat-x;
-}
-
-.clip-border {
-  width: 100%;
-  height: 50px;
-  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 30px repeat-x,
-    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 40px);
-  /* url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom/auto 50px repeat-x; */
-}
-.clip-bg-border {
+.clip-bottom-border {
   width: 100%;
   height: 100%;
-  -webkit-mask: url("https://i.ibb.co/7RW8C9t/top.png") top / auto 30px repeat-x,
-    linear-gradient(#ecded1, #ecded1) no-repeat center/100% calc(100% - 60px),
-    url("https://i.ibb.co/5WvbqgG/zmylJ.png") bottom / auto 30px repeat-x,
-    url("https://i.ibb.co/5WvbqgG/zmylJ.png") left / auto 5px repeat-y;
+  -webkit-mask: linear-gradient(
+        var(--light-background),
+        var(--light-background)
+      )
+      no-repeat center/100% calc(100% - 50px),
+    var(--mask-bottom) bottom / auto 50px repeat-x;
 }
 
-.logo-text {
-  font-family: "Ephesis", cursive;
-  font-style: normal;
+.clip-top-border {
+  width: 100%;
+  height: 100%;
+  -webkit-mask: var(--mask-top) top / auto 30px repeat-x,
+    linear-gradient(var(--light-background), var(--light-background)) no-repeat
+      center/100% calc(100% - 40px);
+}
+
+.clip-y-border {
+  width: 100%;
+  height: 100%;
+  -webkit-mask: var(--mask-top) top / auto 30px repeat-x,
+    linear-gradient(var(--light-background), var(--light-background)) no-repeat
+      center/100% calc(100% - 60px),
+    var(--mask-bottom) bottom / auto 30px repeat-x,
+    var(--mask-bottom) left / auto 5px repeat-y;
 }
